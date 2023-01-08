@@ -120,14 +120,13 @@ $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```matlab
 % qst 6
 
-f =(0:N-1)*(fe/N); % f: frequence du spectre
-y = fft(xnoise);     % y: spectre , fft(x) : transformee de fourier
+y = fft(xnoise);    
 spectreDePuissance=2.^abs(y)/N;
-plot(f,spectreDePuissance); 
+plot(fshift,fftshift(spectreDePuissance)); 
 title('spectre de puissance du signal bruité :');
 
 ```
-![6](https://user-images.githubusercontent.com/106840796/210170672-d51df29d-c132-44d4-b481-727677c5c320.PNG)
+![new](https://user-images.githubusercontent.com/106840796/211200099-0b8f7fdf-d8cf-4a72-aede-17e699ec02ef.PNG)
 ***
  ### **Explication :**
  ###### La spectre de puissance d'un signal est une mesure de la répartition de l'énergie du signal en fonction de la fréquence. Elle permet de visualiser la composition spectral d'un signal et de déterminer les fréquences présentes dans le signal.
