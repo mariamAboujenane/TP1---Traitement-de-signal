@@ -215,17 +215,22 @@ la densité spectrale de puissance du signal.**
 ```matlab
 %qst 3 
 
+% Longueur du signal
+N = length(chant);
+
+% Calcul de la puissance de 2 supérieure à N
+nouvelle_longueur = nextpow2(N);
+N=nouvelle_longueur;
 densite_spectrale= abs(fft(chant)).^2/N; 
 f = (0:floor(N/2))*(fe/N)/10;
 plot(f,densite_spectrale(1:floor(N/2)+1));
 title('densité spectrale de puissance du signal:');
 
 ```
-![qst3](https://user-images.githubusercontent.com/106840796/210177673-64f265b0-d0a3-46a4-99b5-70662aed39ce.PNG)
+![3 new](https://user-images.githubusercontent.com/106840796/211200315-a17c1883-b059-411f-9052-aefc8e0f8e49.PNG)
 ***
  ### **Explication :**
- ###### ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-
+ ###### La fonction "nextpow2" en MATLAB renvoie la puissance de 2 la plus proche supérieure à un nombre donné. Elle est souvent utilisée pour trouver la puissance de 2 la plus proche supérieure à la longueur d'un signal numérique, ce qui peut être utile lors de l'utilisation de certaines techniques d'analyse de signal qui nécessitent que la longueur du signal soit une puissance de 2.
 ***
 $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$ [ (Revenir au sommaire) ](#retour)
 ***
